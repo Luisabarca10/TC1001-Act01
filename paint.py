@@ -12,6 +12,7 @@ Exercises
 
 from turtle import *
 from freegames import vector
+import math
 
 def line(start, end):
     "Draw line from start to end."
@@ -57,7 +58,17 @@ def rectangle(start, end):
 
 def triangle(start, end):
     "Draw triangle from start to end."
-    pass  # TODO
+    width = end.x - start.x
+    height = end.y - start.y
+
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    goto(start.x + width, start.y)
+    goto(start.x + width / 2, end.y)
+    goto(start.x, start.y)
+    end_fill()
 
 def tap(x, y):
     "Store starting point or draw shape."
